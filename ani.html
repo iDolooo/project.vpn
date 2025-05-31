@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>AnimeDab — Озвучка Манги</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .centered {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: #1e1e1e;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 30px;
+      max-width: 800px;
+      width: 100%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffc107;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      color: #ff9800;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .text-block {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 20px 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .link-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .btn-yellow {
+      background-color: #ffc107;
+      color: #000;
+      padding: 14px 26px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-yellow:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+<body>
+  <div class="centered">
+    <div class="container">
+      <div class="title">Сбор на проект</div>
+
+      <div class="text-block">
+        <p>
+          Мы — команда <strong>DabList</strong>, занимаемся озвучкой манги. Многие аниме-сюжеты, основанные на манге, остаются без озвучки из-за отсутствия финансирования — никто не хочет работать бесплатно.
+        </p>
+        <p>
+          Мы хотим собрать сообщество зрителей, которое будет поддерживать проект через подписку, чтобы вдохновить наших дабберов продолжать эти истории в стиле озвучки манги. Это даст возможность фанатам услышать продолжение любимых проектов, не дожидаясь аниме-адаптаций, которые могут и не выйти вовсе.
+        </p>
+
+        <div class="section-title">Что нужно для запуска:</div>
+        <ul>
+          <li>🔸 30 платных подписчиков в Telegram (стоимость озвучки 1 главы — 100 рублей)</li>
+          <li>🔸 Разработка сайта (бесплатно, только затраты на хостинг и домен — около 5 евро/мес)</li>
+        </ul>
+
+        <div class="section-title">Что вы получите:</div>
+        <ul>
+          <li>✔️ Участие в опросах по выбору проектов (в Telegram)</li>
+          <li>✔️ Доступ к эксклюзивной озвучке через сайт</li>
+          <li>✔️ Регулярные релизы манги с озвучкой</li>
+          <li>✔️ Возможность заказать конкретную мангу для озвучки</li>
+        </ul>
+      </div>
+
+      <div class="link-buttons">
+        <a href="https://t.me/tribute/app?startapp=ssn5" class="btn-yellow" target="_blank">📢 Спонсировать Проект</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
