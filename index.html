@@ -1,93 +1,255 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>VPN от Fornex монуал</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DabList - Озвучка манги (РФ Обход)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --accent: #e07b39;
+      --accent-dark: #b06528;
+      --bg-dark: #1e1e1e;
+      --text-light: #e6e6e6;
+      --text-secondary: #a8a8a8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #eee;
       margin: 0;
-      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: var(--text-light);
     }
-    .centered {
+
+    .wrapper {
+      display: flex;
+      height: 100vh;
+      flex-wrap: wrap;
+    }
+
+    .left-panel {
+      width: 50%;
+      background: url('index.jpg') center/cover no-repeat;
+    }
+
+    .right-panel {
+      width: 50%;
+      background-color: var(--bg-dark);
+      padding: 60px 50px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      overflow-y: auto;
     }
-    .container {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      width: 100%;
-      max-width: 600px;
+
+    .info-text {
+      max-width: 520px;
+      text-align: center;
+      margin-bottom: 40px;
     }
-    .title {
-      font-size: 22px;
-      color: #ffc107;
+
+    .info-text h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent);
       margin-bottom: 15px;
-      text-align: center;
+      letter-spacing: 1.1px;
+      text-shadow: 0 0 6px rgba(224, 123, 57, 0.7);
     }
-    .video-wrapper {
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
+
+    .description {
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      line-height: 1.5;
       margin-bottom: 20px;
+      text-shadow: 0 0 5px rgba(224, 123, 57, 0.5);
     }
-    .video-wrapper iframe {
-      width: 100%;
-      height: 315px;
-      border: none;
-    }
-    .link-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .link-buttons a {
+
+    .steps {
+      list-style: decimal inside;
+      padding-left: 0;
+      max-width: 520px;
+      margin: 0 auto 40px auto;
+      font-size: 18px;
+      color: var(--text-light);
+      line-height: 1.6;
+      font-weight: 500;
       text-align: center;
-      padding: 12px;
-      border-radius: 8px;
+    }
+
+    .card {
+      background: #292929;
+      padding: 32px 36px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 440px;
+      margin-bottom: 40px;
+      border: 1px solid #444;
+      box-shadow: 0 6px 15px rgba(176, 123, 43, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 30px rgba(224, 123, 57, 0.3);
+    }
+
+    .instructions {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.03em;
+    }
+
+    .text-box {
+      background: #3a3a3a;
+      padding: 16px 24px;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      user-select: all;
+      margin-bottom: 24px;
+      border: 1px solid #555;
+      box-shadow: inset 0 0 10px #00000088;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .button, .link-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-top: 14px;
+      border-radius: 14px;
+      border: none;
+      font-size: 17px;
+      font-weight: 700;
+      background: var(--accent);
+      color: #121212;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.4s ease, transform 0.25s ease;
       text-decoration: none;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(224, 123, 57, 0.3);
     }
-    .btn-yellow {
-      background-color: #ffc107;
-      color: #000;
+
+    .button:hover, .link-button:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(176, 93, 19, 0.5);
     }
-    .btn-yellow:hover {
-      background-color: #e0a800;
+
+    .footer-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
     }
-    .btn-dark {
-      background-color: #343a40;
-      color: white;
+
+    .footer-buttons a {
+      flex: 1 1 calc(50% - 7px);
+      text-decoration: none;
+      color: var(--text-light);
+      background: #383838;
+      padding: 14px 0;
+      border-radius: 14px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s ease;
+      box-shadow: 0 2px 6px #00000060;
     }
-    .btn-dark:hover {
-      background-color: #23272b;
+
+    .footer-buttons a:hover {
+      background: var(--accent);
+      color: #121212;
+      box-shadow: 0 4px 12px rgba(224, 123, 57, 0.6);
+    }
+
+    @media (max-width: 900px) {
+      .wrapper {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left-panel {
+        display: none;
+      }
+
+      .right-panel {
+        width: 100%;
+        padding: 30px 20px;
+        min-height: 100vh;
+      }
+
+      .footer-buttons {
+        max-width: 440px;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-buttons a {
+        flex: 1 1 100%;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="centered">
-    <div class="container">
-      <div class="title">VPN от Fornex монуал</div>
 
-      <div class="video-wrapper">
-        <iframe src="https://vkvideo.ru/video_ext.php?oid=-198023444&id=456239151&hd=1&hash=c0fda0546b555152" width="640" height="360" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
-      </div>
+<div class="wrapper">
+  <div class="left-panel"></div>
 
-      <div class="link-buttons">
-        <a href="https://fornex.com/code/65nhw0/" target="_blank" class="btn-yellow">Fornex VPN "Покупка доступа"</a>
-        <a href="https://outline-vpn.com/#download-outline" target="_blank" class="btn-dark">"Протокол" Скачать Outline VPN</a>
-        <a href="https://www.wireguard.com/install/" target="_blank" class="btn-dark">"Протокол" Скачать WireGuard VPN</a>
-		<a href="https://fornex.com/ru/help/tag/how-to-configure-openvpn/" target="_blank" class="btn-dark">"Протокол" Скачать OpenVPN</a>
-      </div>
+  <div class="right-panel">
+    <div class="info-text">
+      <h1>DabList</h1>
+      <p class="description">
+        Сайт заблокирован РКН в РФ.<br />
+        Чтобы зайти на сайт, выполните два условия:
+      </p>
+      <ul class="steps">
+        <li>Включите VPN на вашем устройстве</li>
+        <li>Используйте веб-прокси для доступа</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="instructions">1. Скопируйте ссылку:</div>
+      <div class="text-box" id="textToCopy">dablist.me</div>
+      <button class="button" onclick="copyText()">Копировать ссылку</button>
+
+      <div class="instructions" style="margin-top: 20px;">2. Перейдите на прокси-сервис:</div>
+      <a href="https://hidester.one/" target="_blank" class="link-button">Открыть прокси</a>
+    </div>
+
+    <div class="footer-buttons">
+      <a href="https://dablist.me" target="_blank" class="link-button">Прямой вход</a>
+      <a href="#" target="_blank" class="link-button">Android-приложение</a>
     </div>
   </div>
+</div>
+
+<script>
+  function copyText() {
+    const text = document.getElementById('textToCopy').innerText;
+    const tempInput = document.createElement('textarea');
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    alert('Скопировано: ' + text);
+  }
+</script>
+
 </body>
 </html>
